@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var nameButton: UIButton!
     
-    var currentLight = CurrentLight.red
-    let lightIsOn: CGFloat = 1.0
-    let lightIsOff: CGFloat = 0.3
+    private var currentLight = CurrentLight.red
+    private let lightIsOn: CGFloat = 1.0
+    private let lightIsOff: CGFloat = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         settingBacground()
     }
 
-    func settingBacground() {
+    private func settingBacground() {
         nameButton.setTitle("START", for: .normal)
         nameButton.backgroundColor = .purple
         nameButton.tintColor = .black
@@ -48,13 +48,12 @@ class ViewController: UIViewController {
         greenCollorView.backgroundColor = .green
 //        greenCollorView.alpha = 0.3
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillLayoutSubviews() {
         redCollorView.layer.cornerRadius = redCollorView.frame.height / 2
         yellowCollorView.layer.cornerRadius = yellowCollorView.frame.height / 2
         greenCollorView.layer.cornerRadius = greenCollorView.frame.height / 2
-
     }
+
 
     @IBAction func startButton(_ sender: UIButton) {
         if nameButton.currentTitle == "START" {
