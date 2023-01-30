@@ -69,6 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="greenCollorView" destination="VBc-Cy-BpJ" id="ctm-Cs-WtP"/>
+                        <outlet property="nameButton" destination="4zT-BP-bmu" id="HuO-FH-QXA"/>
                         <outlet property="redCollorView" destination="BEe-Ze-YZw" id="Tr0-RP-0K7"/>
                         <outlet property="yellowCollorView" destination="QIo-Vd-xah" id="PHc-wi-LQB"/>
                     </connections>
