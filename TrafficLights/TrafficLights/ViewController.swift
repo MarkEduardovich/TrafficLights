@@ -7,16 +7,29 @@
 
 import UIKit
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet var redCollorView: UIView!
     @IBOutlet var yellowCollorView: UIView!
     @IBOutlet var greenCollorView: UIView!
+    
     @IBOutlet var nameButton: UIButton!
+    
+    var currentLight = CurrentLight.red
+    let lightIsOn: CGFloat = 1.0
+    let lightIsOff: CGFloat = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        redCollorView.alpha = lightIsOff
+        yellowCollorView.alpha = lightIsOff
+        greenCollorView.alpha = lightIsOff
+        
         settingBacground()
     }
 
@@ -27,13 +40,13 @@ class ViewController: UIViewController {
         nameButton.layer.cornerRadius = 10
         
         redCollorView.backgroundColor = .red
-        redCollorView.alpha = 0.3
+//        redCollorView.alpha = 0.3
         
         yellowCollorView.backgroundColor = .yellow
-        yellowCollorView.alpha = 0.3
+//        yellowCollorView.alpha = 0.3
         
         greenCollorView.backgroundColor = .green
-        greenCollorView.alpha = 0.3
+//        greenCollorView.alpha = 0.3
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,23 +57,42 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startButton(_ sender: UIButton) {
-        nameButton.setTitle("NEXT", for: .normal)
-        if redCollorView.alpha != 1 && yellowCollorView.alpha != 1 && greenCollorView.alpha != 1 {
-            redCollorView.alpha = 1
-        } else {
-            if redCollorView.alpha == 1 {
-                redCollorView.alpha = 0.3
-                yellowCollorView.alpha = 1
-            } else {
-                if yellowCollorView.alpha == 1 {
-                    yellowCollorView.alpha = 0.3
-                    greenCollorView.alpha = 1
-                } else {
-                    greenCollorView.alpha = 0.3
-                    redCollorView.alpha = 1
-                }
-            }
+        if nameButton.currentTitle == "START" {
+            nameButton.setTitle("NEXT", for: .normal)
+        }
+        
+        switch currentLight {
+        case .red:
+            greenCollorView.alpha = lightIsOff
+            redCollorView.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            redCollorView.alpha = lightIsOff
+            yellowCollorView.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            yellowCollorView.alpha = lightIsOff
+            greenCollorView.alpha = lightIsOn
+            currentLight = .red
         }
     }
+//        nameButton.setTitle("NEXT", for: .normal)
+//        if redCollorView.alpha != 1 && yellowCollorView.alpha != 1 && greenCollorView.alpha != 1 {
+//            redCollorView.alpha = 1
+//        } else {
+//            if redCollorView.alpha == 1 {
+//                redCollorView.alpha = 0.3
+//                yellowCollorView.alpha = 1
+//            } else {
+//                if yellowCollorView.alpha == 1 {
+//                    yellowCollorView.alpha = 0.3
+//                    greenCollorView.alpha = 1
+//                } else {
+//                    greenCollorView.alpha = 0.3
+//                    redCollorView.alpha = 1
+//                }
+//            }
+//        }
+//    }
 }
 
