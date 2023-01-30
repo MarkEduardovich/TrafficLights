@@ -9,11 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var redCollorView: UIView!
+    @IBOutlet var yellowCollorView: UIView!
+    @IBOutlet var greenCollorView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+        
+        
     }
 
 
+    @IBAction func startButton(_ sender: UIButton) {
+    }
 }
 
