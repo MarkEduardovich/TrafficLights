@@ -28,19 +28,39 @@ class ViewController: UIViewController {
         
         redCollorView.backgroundColor = .red
         redCollorView.alpha = 0.3
-        redCollorView.layer.cornerRadius = 100
         
         yellowCollorView.backgroundColor = .yellow
         yellowCollorView.alpha = 0.3
-        yellowCollorView.layer.cornerRadius = 100
         
         greenCollorView.backgroundColor = .green
         greenCollorView.alpha = 0.3
-        greenCollorView.layer.cornerRadius = 100
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        redCollorView.layer.cornerRadius = redCollorView.frame.height / 2
+        yellowCollorView.layer.cornerRadius = yellowCollorView.frame.height / 2
+        greenCollorView.layer.cornerRadius = greenCollorView.frame.height / 2
+
     }
 
     @IBAction func startButton(_ sender: UIButton) {
-        
+        nameButton.setTitle("NEXT", for: .normal)
+        if redCollorView.alpha != 1 && yellowCollorView.alpha != 1 && greenCollorView.alpha != 1 {
+            redCollorView.alpha = 1
+        } else {
+            if redCollorView.alpha == 1 {
+                redCollorView.alpha = 0.3
+                yellowCollorView.alpha = 1
+            } else {
+                if yellowCollorView.alpha == 1 {
+                    yellowCollorView.alpha = 0.3
+                    greenCollorView.alpha = 1
+                } else {
+                    greenCollorView.alpha = 0.3
+                    redCollorView.alpha = 1
+                }
+            }
+        }
     }
 }
 

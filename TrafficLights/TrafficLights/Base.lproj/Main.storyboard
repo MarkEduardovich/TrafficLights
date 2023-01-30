@@ -16,40 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hxJ-XQ-khz">
-                                <rect key="frame" x="96" y="69" width="201" height="640"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hxJ-XQ-khz">
+                                <rect key="frame" x="96.666666666666686" y="69" width="200" height="640"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEe-Ze-YZw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="200"/>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEe-Ze-YZw">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="W4x-54-zCn"/>
-                                            <constraint firstAttribute="width" constant="201" id="qy6-WW-CVQ"/>
+                                            <constraint firstAttribute="width" secondItem="BEe-Ze-YZw" secondAttribute="height" multiplier="1:1" id="AZm-wG-tIq"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIo-Vd-xah">
-                                        <rect key="frame" x="0.0" y="220" width="201" height="200"/>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIo-Vd-xah">
+                                        <rect key="frame" x="0.0" y="220" width="200" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QIo-Vd-xah" secondAttribute="height" multiplier="1:1" id="cdm-Op-ZxQ"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBc-Cy-BpJ">
-                                        <rect key="frame" x="0.0" y="440" width="201" height="200"/>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBc-Cy-BpJ">
+                                        <rect key="frame" x="0.0" y="440" width="200" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="VBc-Cy-BpJ" secondAttribute="height" multiplier="1:1" id="Sz7-Pc-EFp"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="BEe-Ze-YZw" firstAttribute="width" secondItem="QIo-Vd-xah" secondAttribute="width" id="AFw-Av-o9y"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="640" id="WSL-ws-iJ5"/>
-                                    <constraint firstItem="QIo-Vd-xah" firstAttribute="width" secondItem="VBc-Cy-BpJ" secondAttribute="width" id="cd0-5o-MOK"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="201" id="gNe-m7-UQo"/>
-                                    <constraint firstItem="BEe-Ze-YZw" firstAttribute="height" secondItem="QIo-Vd-xah" secondAttribute="height" id="xfs-ZE-TcX"/>
-                                    <constraint firstItem="QIo-Vd-xah" firstAttribute="height" secondItem="VBc-Cy-BpJ" secondAttribute="height" id="zNF-p7-unk"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zT-BP-bmu">
-                                <rect key="frame" x="96.666666666666686" y="758" width="200" height="60"/>
+                                <rect key="frame" x="94.666666666666671" y="758" width="203.66666666666663" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WqZ-ip-NxN"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jFB-bf-zrD"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -64,7 +60,9 @@
                             <constraint firstItem="4zT-BP-bmu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8cR-2B-t8k"/>
                             <constraint firstItem="4zT-BP-bmu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="D3L-SM-hft"/>
                             <constraint firstItem="hxJ-XQ-khz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xe2-ZK-zwR"/>
+                            <constraint firstItem="4zT-BP-bmu" firstAttribute="width" secondItem="hxJ-XQ-khz" secondAttribute="width" multiplier="1.01868" id="ecm-NO-Xx7"/>
                             <constraint firstItem="4zT-BP-bmu" firstAttribute="top" secondItem="hxJ-XQ-khz" secondAttribute="bottom" constant="49" id="g0C-4i-jnJ"/>
+                            <constraint firstItem="hxJ-XQ-khz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="y5G-5l-w4v"/>
                         </constraints>
                     </view>
                     <connections>
